@@ -114,7 +114,6 @@ int main(int argc, char **argv)
    else if (strcmp("USER",word)==0)  
    {
 
-   	//cout<<endl<<sendline<<endl;
    	send(sockfd, sendline, MAXLINE, 0);
 	recv(sockfd,response,MAXLINE,0);
 	if(strcmp("0",response)==0)
