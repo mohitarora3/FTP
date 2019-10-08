@@ -104,7 +104,6 @@ int main (int argc, char **argv)
 		   }
 		   else if(strcmp("ABORT\n",token)==0)
 		   {
-		   		//cout<<"\nComing in abort";
 		   		USERNAME=0;
 		   		AUTHORIZED=0;
 		   		send(connfd,"200 Command Okay\nSuccessfully logged out!\n",MAXLINE,0);
@@ -118,7 +117,6 @@ int main (int argc, char **argv)
 	
 				while(file>>username)
 				{
-					//cout<<"name from file: "<<username<<endl;
 					if(strcmp(token,username.c_str())==0)
 					{	
 						USERNAME=1;
@@ -139,7 +137,6 @@ int main (int argc, char **argv)
 			{
 				if(!USERNAME)
 				{
-						//USERNAME=0;
 						send(connfd,"503, Bad sequence of commands.\n First tell username then password for successful log in\n",MAXLINE,0);
 				}
 				else
@@ -151,7 +148,6 @@ int main (int argc, char **argv)
 							if(name==username)
 								{
 									file>>password;
-									//cout<<"password from file: "<<password<<endl;
 									if(strcmp(token,password.c_str())==0)
 									{
 										AUTHORIZED=1;
@@ -159,12 +155,10 @@ int main (int argc, char **argv)
 									}
 									else
 									{
-										//cout<<"coming in invalid "<<endl;
 										send(connfd,"\nInvalid password\n",MAXLINE,0);
 								    	
 								    }
 								    file.close();
-								    //cout<<"closing file   "<<endl;
 								    goto done;
 
 								}
