@@ -143,15 +143,10 @@ int main(int argc, char **argv)
 		{
 			//cout<<"response: "<<response<<endl;
 			size=atoi(response);
-	    	//cout<<"size is:  "<<size;
-			//f = (char *)malloc(size);
-          	//recv(sockfd, f, size, 0);
+	    	
 	        filehandle = open("t.txt", O_CREAT | O_EXCL | O_WRONLY, 0666);
-	        //write(filehandle, f, size);
-	       	//cout<<"The remote directory listing is as follows:\n";
 	        system("cat t.txt");
-	        //close(filehandle);
-	      
+	       
          }
 	}
 	
